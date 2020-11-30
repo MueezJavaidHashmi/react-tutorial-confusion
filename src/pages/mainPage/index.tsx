@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import { Container, Navbar, NavbarBrand } from "reactstrap";
 import Menu from "../../components/mainPage/menuComponent";
 import { DISHES } from "../../common/constants";
 
@@ -9,9 +9,9 @@ const MainPage: React.FC = () => {
   return (
     <React.Fragment>
       <Navbar dark color={"primary"}>
-        <div className={"container-fluid"}>
+        <Container fluid={true}>
           <NavbarBrand href={"/"}>Ristorante Con Fusion</NavbarBrand>
-        </div>
+        </Container>
       </Navbar>
       <Menu dishes={dishes} />
     </React.Fragment>
