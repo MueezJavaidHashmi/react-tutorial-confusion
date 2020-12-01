@@ -14,7 +14,16 @@ const MenuCommentsComponent: React.FC<Props> = ({ dish }) => {
         return (
           <React.Fragment key={comment.id}>
             <p>{comment.comment}</p>
-            <p>{"-- " + comment.author + ", " + comment.date}</p>
+            <p>
+              {"-- " +
+                comment.author +
+                ", " +
+                new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "2-digit",
+                }).format(new Date(comment.date))}
+            </p>
           </React.Fragment>
         );
       });
